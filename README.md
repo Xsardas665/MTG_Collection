@@ -6,6 +6,7 @@ Written in C++ using GTKmm3.
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
+GTKmm3 - Gui Library for the application interface.
 ## Project Structure
 ```
 MTG_COLLECTION/
@@ -23,6 +24,8 @@ MTG_COLLECTION/
 │   ├── database.cpp     # Implementation of database operations (SQLite)
 │   ├── main.cpp         # Entry point of the application
 │   └── mainwindow.cpp   # Implementation of the MainWindow class (GUI)
+├── test/                # Source File for gtkmm installation test
+│   └── test_gtkmm.cpp   # Implementation of Single Window in GTKmm for testing purposes
 ├── Makefile             # Build instructions for the project
 └── README.md            # Project documentation
 ```
