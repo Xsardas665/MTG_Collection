@@ -9,17 +9,20 @@ Written in C++ using GTKmm3.
 ## Project Structure
 ```
 MTG_COLLECTION/
-├── src/                 # All source files (.cpp)
-│   ├── card.cpp         # Implementation of the Card model
-│   └── database.cpp     # Implementation of database operations (SQLite)
-├── include/             # All header files (.h)
-│   ├── card.h           # Definition of the Card class
-│   └── database.h       # Definition of the Database class
 ├── build/               # Build artifacts (object files and the final binary)
 ├── data/                # User data (e.g., SQLite database files like cards.db)
 │   └── cards.db         # File of SQLite3 database
+├── include/             # All header files (.h)
+│   ├── card.h           # Declaration of the Card class
+│   ├── database.h       # Declaration of the Database class
+│   └── mainwindow.h     # Declaration of the MainWindow class (GUI)
 ├── sql/                 # SQL scripts (e.g., database initialization)
 │   └── init.sql         # SQL script to create the database schema
+├── src/                 # All source files (.cpp)
+│   ├── card.cpp         # Implementation of the Card model
+│   ├── database.cpp     # Implementation of database operations (SQLite)
+│   ├── main.cpp         # Entry point of the application
+│   └── mainwindow.cpp   # Implementation of the MainWindow class (GUI)
 ├── Makefile             # Build instructions for the project
 └── README.md            # Project documentation
 ```
