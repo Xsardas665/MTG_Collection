@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=`pkg-config gtkmm-3.0 --cflags --libs` -std=c++17 -Iinclude
+CXXFLAGS=`pkg-config gtkmm-3.0 --cflags --libs` -std=c++17 -Iinclude -lsqlite3
 SRCDIR=src
 INCDIR=include
 BUILDDIR=build
