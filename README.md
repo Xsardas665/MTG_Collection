@@ -6,7 +6,8 @@ Written in C++ using GTKmm3.
 ```
 MTG_COLLECTION/
 ├── src/                 # All source files (.cpp)
-│   └── card.cpp         # Implementation of the Card model
+│   ├── card.cpp         # Implementation of the Card model
+│   └── database.cpp     # Implementation of database operations (SQLite)
 ├── include/             # All header files (.h)
 │   ├── card.h           # Definition of the Card class
 │   └── database.h       # Definition of the Database class
