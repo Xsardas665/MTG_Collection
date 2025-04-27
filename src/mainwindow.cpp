@@ -91,11 +91,11 @@ void MainWindow::update_tree_view() {
     // Add each card to the TreeView model
     for (const Card& card : cards) {
         Gtk::TreeModel::Row row = *(model->append());
-        row[m_columns.col_id] = card.id;
-        row[m_columns.col_name] = card.name;
-        row[m_columns.col_color] = card.color;
-        row[m_columns.col_type] = card.type;
-        row[m_columns.col_mana_cost] = card.manaCost;
-        row[m_columns.col_quantity] = card.quantity;
+        row[m_columns.m_id] = card.id;
+        row[m_columns.m_name] = card.name;
+        row[m_columns.m_color] = card.color;
+        row[m_columns.m_type] = card.type;
+        row[m_columns.m_mana_cost] = card.manaCost;
+        row[m_columns.m_quantity] = card.quantity;
     }
 }
