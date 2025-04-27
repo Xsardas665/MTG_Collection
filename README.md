@@ -15,7 +15,7 @@ MTG_COLLECTION/
 ├── sql/                 # SQL scripts (e.g., database initialization)
 │   └── init.sql         # SQL script to create the database schema
 ├── Makefile             # Build instructions for the project
-├── README.md            # Project documentation
+└── README.md            # Project documentation
 ```
 
 ## Building Project

@@ -10,14 +10,14 @@ class Database {
 private:
     sqlite3* db; // Pointer to Database
     int open(const std::string& dbName); // Method for opening connection to database
-    void close(); // Metoda do zamykania bazy danych
+    void close(); // Method for closing connection to database
 
 public:
-    Database(); // Konstruktor
-    ~Database(); // Destruktor
+    Database(); // Class Constructor
+    ~Database(); // Class Deconstructor
 
-    bool addCard(const Card& card); // Dodanie karty do bazy
-    std::vector<Card> getAllCards(); // Pobranie wszystkich kart z bazy
+    bool addCard(const Card& card); // Method for adding card to database
+    std::vector<Card> getAllCards(); // Method for getting all cards from database
 };
 
 #endif
