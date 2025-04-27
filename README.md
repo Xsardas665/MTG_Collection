@@ -4,7 +4,7 @@ Written in C++ using GTKmm3.
 
 ## Project Structure
 ```
-mtg-gtk/
+MTG_COLLECTION/
 ├── src/                 # All source files (.cpp)
 │   └── card.cpp         # Implementation of the Card model
 ├── include/             # All header files (.h)
