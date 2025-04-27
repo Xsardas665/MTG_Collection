@@ -3,10 +3,12 @@
 
 #include <gtkmm.h>
 #include "database.h"
+#include "columns.h"
 
 class MainWindow : public Gtk::Window {
 private:
     Database database; // Database object for interacting with the database
+    ModelColumns m_columns; // Use ModelColumns class here
     Gtk::Box m_box;    // Main container for the window
     Gtk::TreeView m_treeView; // TreeView for displaying cards
     Gtk::Button m_loadButton; // Button for loading cards from the database
