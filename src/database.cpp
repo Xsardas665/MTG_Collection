@@ -76,7 +76,7 @@ std::vector<Card> Database::getAllCards() {
         );
         cards.push_back(card);
     }
-
+    
     sqlite3_finalize(stmt);
     return cards;
 }

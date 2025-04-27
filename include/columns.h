@@ -20,6 +20,8 @@ public:
     Gtk::TreeModelColumn<Glib::ustring> m_type;
     Gtk::TreeModelColumn<Glib::ustring> m_mana_cost;
     Gtk::TreeModelColumn<int> m_quantity;
+    Gtk::TreeModelColumn<Glib::RefPtr<Gtk::Button>> m_remove_button;
+
 };
 
 #endif // COLUMNS_H

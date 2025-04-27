@@ -24,6 +24,7 @@ MainWindow::MainWindow()
     formBox->pack_start(m_manaCostEntry);
     formBox->pack_start(m_quantityEntry);
 
+    m_nameEntry.set_placeholder_text("Name");
     // Buttons for actions
     Gtk::Box* buttonBox = Gtk::manage(new Gtk::Box(Gtk::ORIENTATION_HORIZONTAL, 5));
     m_box.pack_start(*buttonBox);
@@ -37,6 +38,13 @@ MainWindow::MainWindow()
     // Connect signals to button click events
     m_loadButton.signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_load_button_click));
     m_addButton.signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_add_button_click));
+
+    m_treeView.append_column("ID", m_columns.m_id);
+    m_treeView.append_column("Name", m_columns.m_name);
+    m_treeView.append_column("Color", m_columns.m_color);
+    m_treeView.append_column("Type", m_columns.m_type);
+    m_treeView.append_column("Mana Cost", m_columns.m_mana_cost);
+    m_treeView.append_column("Quantity", m_columns.m_quantity);
 
     // Initial update of the TreeView
     update_tree_view();
@@ -90,6 +98,7 @@ void MainWindow::update_tree_view() {
 
     // Add each card to the TreeView model
     for (const Card& card : cards) {
+        std::cout << "Adding card: " << card.name << std::endl;
         Gtk::TreeModel::Row row = *(model->append());
         row[m_columns.m_id] = card.id;
         row[m_columns.m_name] = card.name;
@@ -97,5 +106,8 @@ void MainWindow::update_tree_view() {
         row[m_columns.m_type] = card.type;
         row[m_columns.m_mana_cost] = card.manaCost;
         row[m_columns.m_quantity] = card.quantity;
+        std::cout << "Card added: " << row[m_columns.m_name] << std::endl;
     }
+    m_treeView.queue_draw();
+
 }
