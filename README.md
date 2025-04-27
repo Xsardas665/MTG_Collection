@@ -8,7 +8,8 @@ MTG_COLLECTION/
 ├── src/                 # All source files (.cpp)
 │   └── card.cpp         # Implementation of the Card model
 ├── include/             # All header files (.h)
-│   └── card.h           # Definition of the Card class
+│   ├── card.h           # Definition of the Card class
+│   └── database.h       # Definition of the Database class
 ├── build/               # Build artifacts (object files and the final binary)
 ├── data/                # User data (e.g., SQLite database files like cards.db)
 ├── sql/                 # SQL scripts (e.g., database initialization)
