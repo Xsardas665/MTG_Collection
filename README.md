@@ -13,6 +13,7 @@ MTG_COLLECTION/
 │   └── database.h       # Definition of the Database class
 ├── build/               # Build artifacts (object files and the final binary)
 ├── data/                # User data (e.g., SQLite database files like cards.db)
+│   └── cards.db         # File of SQLite3 database
 ├── sql/                 # SQL scripts (e.g., database initialization)
 │   └── init.sql         # SQL script to create the database schema
 ├── Makefile             # Build instructions for the project
