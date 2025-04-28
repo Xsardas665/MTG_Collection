@@ -16,8 +16,12 @@ MTG_COLLECTION/
 ├── include/             # All header files (.h)
 │   ├── card.h           # Declaration of the Card class
 │   ├── database.h       # Declaration of the Database class
+│   ├── columns.h        # Declaration of the ModelColumns Class for GTK::TreeView
 │   └── mainwindow.h     # Declaration of the MainWindow class (GUI)
 ├── sql/                 # SQL scripts (e.g., database initialization)
+│   ├── delete_card.sql  # SQL query to delete target card
+│   ├── insert_card.sql  # SQL query to insert card to database
+│   ├── select_all.sql   # SQL query to select all cards to database
 │   └── init.sql         # SQL script to create the database schema
 ├── src/                 # All source files (.cpp)
 │   ├── card.cpp         # Implementation of the Card model
