@@ -1,5 +1,7 @@
 #include "../include/database.h"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 // Constructor — opens the database.
 Database::Database() : db(nullptr) {
@@ -27,7 +29,10 @@ void Database::close() {
 
 // Adding a card to the database.
 bool Database::addCard(const Card& card) {
-    std::string sql = "INSERT INTO cards (name, color, type, mana_cost, quantity) VALUES (?, ?, ?, ?, ?);";
+    std::ifstream file("sql/insert_card.sql");
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    std::string sql = buffer.str();
     
     sqlite3_stmt* stmt;
     int rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
@@ -57,7 +62,11 @@ bool Database::addCard(const Card& card) {
 // Retrieving all cards from the database.
 std::vector<Card> Database::getAllCards() {
     std::vector<Card> cards;
-    std::string sql = "SELECT * FROM cards;";
+    //std::string sql = "SELECT * FROM cards;";
+    std::ifstream file("sql/select_all.sql");
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    std::string sql = buffer.str();
     sqlite3_stmt* stmt;
 
     int rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
@@ -74,6 +83,7 @@ std::vector<Card> Database::getAllCards() {
             reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4)), // mana_cost
             sqlite3_column_int(stmt, 5) // quantity
         );
+        card.id = sqlite3_column_int(stmt, 0);
         cards.push_back(card);
     }
     

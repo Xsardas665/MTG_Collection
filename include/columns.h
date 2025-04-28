@@ -12,6 +12,7 @@ public:
         add(m_type); 
         add(m_mana_cost); 
         add(m_quantity);
+        add(m_action);
     }
 
     Gtk::TreeModelColumn<int> m_id;
@@ -20,8 +21,7 @@ public:
     Gtk::TreeModelColumn<Glib::ustring> m_type;
     Gtk::TreeModelColumn<Glib::ustring> m_mana_cost;
     Gtk::TreeModelColumn<int> m_quantity;
-    Gtk::TreeModelColumn<Glib::RefPtr<Gtk::Button>> m_remove_button;
-
+    Gtk::TreeModelColumn<Glib::ustring> m_action;
 };
 
 #endif // COLUMNS_H

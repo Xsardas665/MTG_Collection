@@ -45,7 +45,8 @@ MainWindow::MainWindow()
     m_treeView.append_column("Type", m_columns.m_type);
     m_treeView.append_column("Mana Cost", m_columns.m_mana_cost);
     m_treeView.append_column("Quantity", m_columns.m_quantity);
-
+    m_treeView.append_column("Actions", m_columns.m_action);
+    
     // Initial update of the TreeView
     update_tree_view();
 
@@ -106,7 +107,11 @@ void MainWindow::update_tree_view() {
         row[m_columns.m_type] = card.type;
         row[m_columns.m_mana_cost] = card.manaCost;
         row[m_columns.m_quantity] = card.quantity;
-        std::cout << "Card added: " << row[m_columns.m_name] << std::endl;
+        std::cout << "Card added: " 
+                  << row[m_columns.m_name] 
+                  << " id: " 
+                  << row[m_columns.m_id]
+                  << std::endl;
     }
     m_treeView.queue_draw();
 

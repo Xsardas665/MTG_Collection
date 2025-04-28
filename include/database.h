@@ -17,6 +17,7 @@ public:
     ~Database(); // Class Deconstructor
 
     bool addCard(const Card& card); // Method for adding card to database
+    bool deleteCard(int id);
     std::vector<Card> getAllCards(); // Method for getting all cards from database
 };
 

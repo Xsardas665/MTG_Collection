@@ -1,0 +1,1 @@
+INSERT INTO cards (name, color, type, mana_cost, quantity) VALUES (?, ?, ?, ?, ?);
